@@ -1,0 +1,1 @@
+"D:\微信web开发者工具\cli.bat" cloud functions deploy --e cloud1-5gkg4fxccefb5893 --n quickstartFunctions --r --project "G:\End\fansmath\student" --report_first --report
