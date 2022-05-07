@@ -1,2 +1,68 @@
-<!--pages/assignment/examDetail/index.wxml-->
-<text>pages/assignment/examDetail/index.wxml</text>
+<i-tabs current="{{ current }}" color="#2db7f5" bindchange="handleChange">
+  <i-tab key="tab1" title="待考试"></i-tab>
+  <i-tab key="tab2" title="待改卷"></i-tab>
+  <i-tab key="tab3" title="已完成"></i-tab>
+  <i-tab key="tab4" title="课程成绩"></i-tab>
+</i-tabs>
+<view wx:if="{{current == 'tab1'}}">
+  <view class="exam-list">
+    <view wx:for="{{examList}}" class="item">
+      <view class="tag">
+        <i-tag wx:if="{{item.type == 0}}" class="i-tags" name="章节考" color="red" type="border">
+          课程考
+        </i-tag>
+        <i-tag wx:if="{{item.type == 1}}" class="i-tags" name="章节考" color="green" type="border">
+          章节考
+        </i-tag>
+        <i-tag wx:if="{{item.type == 2}}" class="i-tags" name="章节考" color="blue" type="border">
+          小节考
+        </i-tag>
+      </view>
+      <view class="title">{{item.title}}</view>
+      <view class="msg" data-Id="{{item.id}}" bindtap="navTab1">查看详情 ></view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{current == 'tab2'}}">
+  <view class="exam-list">
+    <view class="item">
+      <view class="tag">
+        <i-tag class="i-tags" name="章考" color="green" type="border">章测试</i-tag>
+      </view>
+      <view class="title">高等数学（下）</view>
+      <view class="msg">查看答题 ></view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{current == 'tab3'}}">
+  <view class="exam-list">
+    <view class="item" bindtap="navTab3">
+      <view class="tag">
+        <i-tag class="i-tags" name="期末考" color="green" type="border">期末考</i-tag>
+      </view>
+      <view class="title">高等数学（上）</view>
+      <view class="total" style="color:#2DB7F5;">90</view>
+    </view>
+    <view class="item">
+      <view class="tag">
+        <i-tag class="i-tags" name="章考" color="red" type="border">章测试</i-tag>
+      </view>
+      <view class="title">高等数学（上）</view>
+      <view class="total" style="color:#ff9900;">50</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{current == 'tab4'}}">
+  <view class="exam-list">
+    <block wx:for="{{itemArr}}">
+      <view class="item">
+        <view class="tag">
+          <i-tag class="i-tags" name="章节考" color="green" type="border">90</i-tag>
+        </view>
+        <view class="title">高等数学（上）</view>
+        <view class="msg" bindtap="navTab4">查看详情 ></view>
+      </view>
+    </block>
+  </view>
+</view>
+<i-message id="message" />

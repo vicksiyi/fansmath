@@ -59,7 +59,14 @@ Page({
         answerCount: 20,
       },
     ],
-    bookArr: [],
+    bookArr: [{
+      title:"高等数学一",
+      author:"王教授",
+      version:"一",
+      press:"xxxxx",
+      isbn:"xxxxx",
+      img:"https://img1.baidu.com/it/u=3066637667,3550351465&fm=253&fmt=auto&app=138&f=JPEG?w=513&h=500"
+    }],
     classArr: [
       {
         id: 0,

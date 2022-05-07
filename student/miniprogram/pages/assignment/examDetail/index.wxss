@@ -1,1 +1,128 @@
-/* pages/assignment/examDetail/index.wxss */
+.exam-list {
+  width: 700rpx;
+  line-height: 100rpx;
+  margin: auto;
+}
+
+.exam-list .item {
+  display: flex;
+  flex-direction: row;
+  border: 1rpx solid #e9eaec;
+  border-radius: 10rpx;
+  margin-top: 30rpx;
+}
+
+.exam-list .item .tag {
+  width: 120rpx;
+  text-align: center;
+}
+
+.exam-list .item .title {
+  width: 380rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #495060;
+  line-height: 100rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.exam-list .item .msg {
+  width: 200rpx;
+  font-weight: normal;
+  font-size: 26rpx;
+  text-align: right;
+  padding-right: 20rpx;
+  color: #80848f;
+}
+
+.exam-list .item .total {
+  width: 200rpx;
+  font-size: 38rpx;
+  font-weight: normal;
+  text-align: center;
+  font-family: inherit;
+}
+
+.class-exam {
+  /* width: 700rpx; */
+  height: 260rpx;
+}
+
+.class-exam .item {
+  width: 700rpx;
+  border: 1rpx solid #e9eaec;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: row;
+  margin: 30rpx auto;
+}
+
+.class-exam .item .img {
+  position: relative;
+  width: 360rpx;
+  height: 240rpx;
+  margin: 10rpx;
+}
+
+.class-exam .item .img .title {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 260rpx;
+  height: 60rpx;
+  background: #2DB7F5;
+  color: #fff;
+  font-weight: normal;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.class-exam .item .img image {
+  width: 360rpx;
+  height: 240rpx;
+}
+
+.class-exam .item .detail {
+  width: 340rpx;
+}
+
+.class-exam .item .detail .total {
+  width: 340rpx;
+  height: 100rpx;
+  text-align: center;
+  font-weight: normal;
+  padding: 5rpx;
+}
+
+.class-exam .item .detail .total .total-title {
+  font-size: 24rpx;
+  color: #80848f;
+  height: 40rpx;
+  height: 40rpx;
+}
+
+.class-exam .item .detail .total .num {
+  font-size: 38rpx;
+  color: #ff9900;
+  height: 50rpx;
+  line-height: 80rpx;
+}
+
+.class-exam .item .detail .total-detail {
+  width: 340rpx;
+  display: flex;
+  flex-wrap: wrap;
+  /* padding: 10rpx; */
+  justify-content: center;
+  margin-top: 40rpx;
+}
+
+.class-exam .item .detail .total-detail .total-item {
+  font-size: 20rpx;
+  padding: 5rpx;
+  color: #80848f;
+  margin: 6rpx;
+}

@@ -1,0 +1,75 @@
+<!-- 
+  1、选择题 题目：照片&文字；选答题：照片&文字
+  2、填空题 题目：照片&文字；
+  3、简答题 题目：照片&文字；答案：文字&照片列表
+-->
+<swiper style="height:{{height}}px;" current="{{current}}" bindchange="swiperChange">
+  <!-- 图片 -->
+  <block wx:for="{{examList}}" wx:for-index="idx">
+    <swiper-item>
+      <view class="topic" style="height:{{height}}px;">
+        <!-- 题目 -->
+        <view class="title">
+          <view>{{idx+1}}. </view>
+          <image mode="aspectFit" bindtap="showImage" data-Url="{{item.title}}"
+            src="{{item.title}}"></image>
+        </view>
+        <view class="line"></view>
+        <view wx:if="{{item.type == 0}}" class="result">
+          <radio-group data-Index="{{idx}}" bindchange="radioChange">
+            <view class="item">
+              <radio color="#2d8cf0" value="0" /> A:<image mode="aspectFit" bindtap="showImage"
+                data-Url="{{item.A}}" src="{{item.A}}">
+              </image>
+            </view>
+            <view class="item">
+              <radio color="#2d8cf0" value="1" /> B:<image mode="aspectFit" bindtap="showImage"
+                data-Url="{{item.B}}" src="{{item.B}}">
+              </image>
+            </view>
+            <view class="item">
+              <radio color="#2d8cf0" value="2" /> C:<image bindtap="showImage"
+                data-Url="{{item.C}}" mode="aspectFit"
+                src="{{item.C}}"></image>
+            </view>
+            <view class="item">
+              <radio color="#2d8cf0" value="3" /> D:<image mode="aspectFit" bindtap="showImage"
+                data-Url="{{item.D}}" src="{{item.D}}">
+              </image>
+            </view>
+          </radio-group>
+        </view>
+        <view wx:else>
+          <i-panel title="上传答案">
+            <view class="img-list">
+              <view wx:for="{{result[idx].result}}" class="img" bindtap="showImage" data-Url="../../../assets/temp/1.png">
+                <image mode="aspectFit" src="{{item}}"></image>
+              </view>
+              <view data-Index="{{idx}}" bindtap="upload" class="img-default">
+                <image src="../../../assets/image/otherIcon/answer/upload.png"></image>
+              </view>
+            </view>
+          </i-panel>
+        </view>
+        <view class="btn-container">
+          <button class="btn-sumbit" wx:if="{{idx==0}}" disabled="true">上一题</button>
+          <button class="btn-sumbit" bindtap="pre" wx:else>上一题</button>
+          <button class="btn-sumbit" wx:if="{{idx==examList.length - 1}}" bindtap="showSubmit">提交试卷</button>
+          <button class="btn-sumbit" bindtap="next" wx:else>下一题</button>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 题目上帝视角 -->
+<view class="widget" bindtap="showWidget">
+  <image src="../../../assets/image/otherIcon/exam-list.png"></image>
+</view>
+<i-action-sheet visible="{{ submitShow }}" actions="{{ actions2 }}" show-cancel bind:cancel="handleCancel2"
+  bind:click="handleClickItem2" mask-closable="{{ false }}">
+  <view slot="header" style="padding: 16px">
+    <view style="color: #444;font-size: 16px">确定吗？</view>
+    <text>如果确定请点击提交</text>
+  </view>
+</i-action-sheet>
+<i-message id="message" />

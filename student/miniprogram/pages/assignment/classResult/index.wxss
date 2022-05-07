@@ -1,0 +1,129 @@
+/* pages/assignment/classResult/index.wxss */
+.border-class {
+  width: 700rpx;
+  margin: 20rpx auto;
+}
+
+.item-img {
+  width: 100%;
+  height: 380rpx;
+  background-color: #f8f8f9;
+}
+
+.title-container {
+  width: 300rpx;
+  height: 40rpx;
+  background-color: #2db7f5;
+  position: absolute;
+  top: 360rpx;
+  right: 24rpx;
+}
+
+.item-title {
+  color: white;
+  font-size: 32rpx;
+  position: relative;
+  text-align: right;
+}
+
+.footer-container {
+  height: 65rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+
+.footer-item-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.footer-text {
+  font-size: 28rpx;
+  color: #515a6e;
+}
+
+.exam-list {
+  width: 700rpx;
+  line-height: 100rpx;
+  margin: auto;
+  max-height: 400rpx;
+  overflow: scroll;
+  margin-bottom: 30rpx;
+}
+
+.exam-list .item {
+  display: flex;
+  flex-direction: row;
+  border: 1rpx solid #e9eaec;
+  border-radius: 10rpx;
+  margin-top: 30rpx;
+}
+
+.exam-list .item:last-child {
+  margin-bottom: 30rpx;
+}
+
+.exam-list .item .tag {
+  width: 120rpx;
+  text-align: center;
+}
+
+.exam-list .item .title {
+  width: 380rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: #495060;
+  line-height: 100rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.exam-list .item .total {
+  width: 200rpx;
+  font-size: 38rpx;
+  font-weight: normal;
+  text-align: center;
+  font-family: inherit;
+}
+
+.num {
+  font-size: 50rpx;
+  text-align: center;
+  padding: 20rpx;
+  color: #ff9900;
+}
+
+.msg {
+  padding: 20rpx;
+  font-size: 25rpx;
+  color: #495060;
+}
+
+.widget {
+  position: fixed;
+  bottom: 100rpx;
+  right: 50rpx;
+  width: 70rpx;
+  height: 70rpx;
+  /* border: 1rpx solid #e9eaec; */
+  box-shadow: 1rpx 1rpx 10rpx #e9eaec;
+  border-radius: 50%;
+}
+
+.widget image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin: 5rpx;
+}

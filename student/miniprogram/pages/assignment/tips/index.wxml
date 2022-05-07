@@ -1,0 +1,15 @@
+<view class="frame">
+  <view class="header">考试声明</view>
+  <view class="list">
+    <view wx:if="{{statements.length != 0}}">
+      <view wx:for="{{statements}}" class="item">
+        {{index + 1}}、{{item.msg}}
+      </view>
+    </view>
+    <view wx:else class="item">1、暂无考试声明</view>
+  </view>
+</view>
+<view class="enter">
+  <button class="btn" bindtap="nav">进入考试</button>
+</view>
+<i-message id="message" />

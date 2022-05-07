@@ -1,0 +1,38 @@
+.frame {
+  width: 500rpx;
+  margin: 100rpx auto;
+  border-radius: 10rpx;
+  box-shadow: 1rpx 1rpx 10rpx #dddee1;
+  padding-bottom: 20rpx;
+}
+
+.frame .header {
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: normal;
+  width: 500rpx;
+  color: #1c2438;
+  padding-top: 30rpx;
+}
+
+.frame .list{
+  margin-top: 30rpx;
+  width: 460rpx;
+  overflow: scroll;
+  max-height: 600rpx;
+  margin: 20rpx auto;
+}
+
+.frame .list .item{
+  font-size: 28rpx;
+  font-weight: normal;
+  margin-top: 20rpx;
+  color: #495060;
+}
+
+.enter .btn{
+  background: #2DB7F5;
+  color: #fff;
+  width: 80%;
+  margin: auto;
+}

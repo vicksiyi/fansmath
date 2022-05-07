@@ -11,7 +11,11 @@
     "pages/lecture/classDetails/index",
     "pages/lecture/classPPT/index",
     "pages/lecture/classVideo/index",
-    "pages/lecture/teacherDetails/index"
+    "pages/lecture/teacherDetails/index",
+    "pages/assignment/tips/index",
+    "pages/assignment/exam/index",
+    "pages/assignment/done/index",
+    "pages/assignment/classResult/index"
   ],
   "tabBar": {
     "color": "#808695",

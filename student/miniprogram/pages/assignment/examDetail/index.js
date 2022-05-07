@@ -1,66 +1,58 @@
-// pages/assignment/examDetail/index.js
+const app = getApp();
+const { $Message } = require('../../../dist/base/index');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    current: 'tab1',
+    itemArr: [
+      {
+        id: 0,
+        img: "../../../assets/image/math.jpeg",
+        title: "高等数学（上）",
+        classCount: "200",
+        createdTime: "2020-01-29",
+      }
+    ],
+    examList: [
+      { type: 1, title: "高等数学" }
+    ],
+    token: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
+  onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  onShow: async function () {
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  handleChange({ detail }) {
+    this.setData({
+      current: detail.key
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  navTab1: function (e) {
+    wx.navigateTo({
+      url: `../tips/index`,
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
+  navTab2: function () {
+    wx.navigateTo({
+      url: '../submit/index',
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
+  navTab3: function () {
+    wx.navigateTo({
+      url: '../done/index',
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  navTab4: function () {
+    wx.navigateTo({
+      url: '../classResult/index',
+    })
   }
 })
