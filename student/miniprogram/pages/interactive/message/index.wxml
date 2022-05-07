@@ -43,7 +43,7 @@
                     </view>
                 </view>
                 <!-- 未回复 -->
-                <view class="noanswer-container" wx:if="{{!item.replied}}" bind:tap="toMsgAnswer">
+                <view class="noanswer-container" wx:if="{{!item.replied}}">
                     <view class="noanswer-inner-container">
                         <view>来自 {{item.class}}</view>
                         <view class="info-container">

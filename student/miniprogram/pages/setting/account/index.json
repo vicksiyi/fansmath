@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-panel": "../../../dist/panel/index",
+    "i-cell-group": "../../../dist/cell-group/index",
+    "i-icon": "../../../dist/icon/index",
+    "i-cell": "../../../dist/cell/index"
+  },
+  "navigationBarTitleText": "账号绑定"
+}

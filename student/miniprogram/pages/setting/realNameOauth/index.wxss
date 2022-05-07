@@ -1,0 +1,32 @@
+.img-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.img-card .item {
+  width: 350rpx;
+  height: 250rpx;
+  margin: 25rpx;
+  text-align: center;
+  padding: 20rpx;
+  box-shadow: 1rpx 1rpx 10rpx #f8f8f9;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  color: #80848f;
+}
+
+.img-card .item .img image {
+  width: 260rpx;
+  height: 180rpx;
+}
+
+.btn {
+  margin-top: 30rpx;
+  background: #2db7f5;
+  color: #fff;
+  font-weight: normal;
+}
+
+.status {
+  margin: 30rpx;
+}

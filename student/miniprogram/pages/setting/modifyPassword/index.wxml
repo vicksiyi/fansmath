@@ -1,0 +1,9 @@
+<i-panel title="密码修改">
+  <i-input value="{{ resource }}" title="原密码" type="password" placeholder="请输入原密码" />
+  <i-input value="{{ password }}" title="修改密码" type="password" placeholder="请输入密码" />
+  <i-input value="{{ password2 }}" title="确认密码" type="password" placeholder="请再次输入密码" />
+</i-panel>
+<view class="btn-container">
+  <button class="btn-cancle" bind:tap="toMine">取消</button>
+  <button class="btn-sumbit">保存</button>
+</view>

@@ -1,0 +1,15 @@
+<i-panel title="账号绑定 已完成{{done}}/{{num}}">
+  <i-cell-group>
+    <i-cell title="邮箱绑定" label="可用邮箱找回密码；消息通知等" is-link url="../email/index">
+      <i-icon slot="icon" type="addressbook" />
+      <view slot='footer'>zer**@163.com</view>
+    </i-cell>
+    <i-cell title="手机号绑定" label="可通过手机号找回密码" is-link url="../phone/index">
+      <i-icon slot="icon" type="barrage" />
+      <view slot='footer'>1333**215</view>
+    </i-cell>
+    <i-cell title="密码修改" is-link url="../modifyPassword/index">
+      <i-icon slot="icon" type="brush_fill" />
+    </i-cell>
+  </i-cell-group>
+</i-panel>

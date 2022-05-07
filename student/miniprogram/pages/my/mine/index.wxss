@@ -1,1 +1,59 @@
-/* pages/my/mine/index.wxss */
+.mine-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.avatar-img {
+  width: 150rpx;
+  height: 150rpx;
+  padding: 100rpx 0 30rpx 0;
+}
+
+.avatar-name {
+  font-size: 38rpx;
+}
+
+.avatar-title {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+}
+
+.item-container {
+  width: 90%;
+  height: 180rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30rpx;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 1rpx 1rpx 10rpx #e9eaec;
+  width: 20%;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-top: 40rpx;
+}
+
+.item-img {
+  width: 70rpx;
+  height: 70rpx;
+  margin-bottom: 20rpx;
+}
+
+.item-text {
+  font-size: 28rpx;
+}

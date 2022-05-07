@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-input": "../../../dist/input/index",
+    "i-panel": "../../../dist/panel/index",
+    "i-steps": "../../../dist/steps/index",
+    "i-step": "../../../dist/step/index"
+  },
+  "navigationBarTitleText": "实名认证"
+}

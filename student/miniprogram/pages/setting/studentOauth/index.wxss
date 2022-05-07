@@ -1,0 +1,109 @@
+.img-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.img-card .item {
+  width: 350rpx;
+  height: 250rpx;
+  margin: 25rpx;
+  text-align: center;
+  padding: 20rpx;
+  box-shadow: 1rpx 1rpx 10rpx #f8f8f9;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  color: #80848f;
+}
+
+.img-card .item .img image {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.btn {
+  margin-top: 30rpx;
+  background: #2db7f5;
+  color: #fff;
+  font-weight: normal;
+}
+
+.status {
+  margin: 30rpx;
+}
+
+.context-container {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 0;
+  font-size: 34rpx;
+  color: #17233d;
+}
+
+picker-view .btns {
+  width: 100%;
+  height: 100rpx;
+  color: #2db7f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+
+picker-view .btns view {
+  width: 20%;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+picker-view {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 0;
+  border-radius: 30rpx 30rpx 0 0;
+  z-index: 999;
+}
+
+picker-view.show {
+  height: 36%;
+  transition: all 0.4s;
+}
+
+picker-view-column {
+  border-radius: 30rpx 30rpx 0 0;
+  color: #b8b8b8;
+  font-size: 32rpx;
+  margin-top: 47rpx;
+}
+
+.picker-col {
+  width: 100%;
+  height: 50rpx;
+  color: #2db7f5;
+  border-top: 1px solid #f2f3f5;
+  border-bottom: 1px solid #f2f3f5;
+}
+
+.picker-col::before {
+  width: 10rpx;
+  height: 28rpx;
+  position: absolute;
+  left: 200rpx;
+  top: 15rpx;
+  background-size: 100% 100%;
+}
+
+.picker-col::after {
+  display: none;
+}
+
+.placeholder-style {
+  font-size: 30rpx;
+}

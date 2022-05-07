@@ -15,7 +15,21 @@
     "pages/assignment/tips/index",
     "pages/assignment/exam/index",
     "pages/assignment/done/index",
-    "pages/assignment/classResult/index"
+    "pages/assignment/classResult/index",
+    "pages/my/myInfo/index",
+    "pages/my/myClass/index",
+    "pages/my/myForward/index",
+    "pages/my/myLog/index",
+    "pages/my/setting/index",
+    "pages/my/answer/index",
+    "pages/setting/account/index",
+    "pages/setting/email/index",
+    "pages/setting/issue/index",
+    "pages/setting/loginLog/index",
+    "pages/setting/modifyPassword/index",
+    "pages/setting/phone/index",
+    "pages/setting/realNameOauth/index",
+    "pages/setting/studentOauth/index"
   ],
   "tabBar": {
     "color": "#808695",

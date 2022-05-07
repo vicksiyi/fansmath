@@ -1,2 +1,17 @@
-<!--pages/my/mine/index.wxml-->
-<text>pages/my/mine/index.wxml</text>
+<view class="mine-container">
+  <view class="avatar-box">
+    <view>
+      <image src="../../../assets/image/otherIcon/avatar.png" class="avatar-img"></image>
+    </view>
+    <view class="avatar-name">Hi,{{nickName}}</view>
+    <view class="avatar-title">({{school}})</view>
+  </view>
+  <view class="item-container">
+    <block wx:for="{{select}}">
+      <view class="item-list" bindtap="{{item.nav}}">
+        <image src="{{item.img}}" class='item-img'></image>
+        <text class="item-text">{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+</view>
