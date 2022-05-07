@@ -1,0 +1,24 @@
+page {
+  background-color: #2db7f5;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 400rpx;
+}
+
+.welcome-text {
+  color: white;
+  font-size: 40rpx;
+  font-weight: bolder;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.welcome-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 20rpx;
+  margin-left: 88%;
+}

@@ -1,0 +1,7 @@
+{
+  "disableScroll": true,
+  "usingComponents": {
+    "i-message": "../../../dist/message/index"
+  },
+  "navigationBarTitleText": "登录"
+}

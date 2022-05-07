@@ -1,0 +1,10 @@
+<!--pages/signIn/welcome/index.wxml-->
+<view>
+    <view class="welcome-container">
+        <view class="welcome-text">早上好，</view>
+        <view class="welcome-text">数学是打开科学大门的钥匙。——培根</view>
+    </view>
+    <view>
+        <image bind:tap="toWelcome" src="../../../assets/image/otherIcon/welcome-btn.png" class='welcome-icon'></image>
+    </view>
+</view>

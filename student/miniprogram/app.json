@@ -1,13 +1,16 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/signIn/index/index",
+    "pages/signIn/login/index",
+    "pages/signIn/register/index",
+    "pages/signIn/welcome/index"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#2db7f5",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#2db7f5",
     "navigationBarTitleText": "数学迷",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json"
 }

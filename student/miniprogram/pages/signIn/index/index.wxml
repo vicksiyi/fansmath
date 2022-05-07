@@ -1,0 +1,19 @@
+<view>
+  <view class="logo-container">
+    <image src="../../../assets/image/main-logo.jpg" class="logo-img"></image>
+  </view>
+  <view>
+    <button class="key-login-btn" bindtap="getUserProfile">一键登录</button>
+  </view>
+  <view class="account-login-container">
+    <view class="account-login-text" bind:tap="toLogin">数学迷账号注册/登录</view>
+    <image src="../../../assets/image/otherIcon/arrow-right.png" class='account-login-icon'></image>
+  </view>
+  <view class="tip-container">
+    <span class="tip-normal">登录即表示同意数学迷</span>
+    <span class="tip-book">《用户协议》</span>
+    <span class="tip-normal">和</span>
+    <span class="tip-book">《隐私政策》</span>
+  </view>
+</view>
+<i-message id="message" />

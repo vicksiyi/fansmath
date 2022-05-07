@@ -1,0 +1,15 @@
+<view class="input-container">
+    <view class="input-row">
+        <image src="../../../assets/image/otherIcon/input-user.png" class='input-icon'></image>
+        <input value="{{account}}" placeholder-class="phcolor" bindinput="accountChange" class="input-text" type="number" placeholder="请输入账号/邮箱号" />
+    </view>
+    <view class="input-line"></view>
+    <view class="input-row">
+        <image src="../../../assets/image/otherIcon/input-pwd.png" class='input-icon'></image>
+        <input value="{{passwd}}" placeholder-class="phcolor" bindinput="passwdChange" class="input-text" password type="text" placeholder="请输入密码" />
+    </view>
+    <view class="input-line"></view>
+</view>
+<button class="account-login-btn" bind:tap="toLogin">立即登录</button>
+<view class="login-way-text" bindtap="toRegister">注册</view>
+<i-message id="message" />
