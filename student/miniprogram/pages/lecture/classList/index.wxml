@@ -1,0 +1,29 @@
+<view>
+  <view class="item-container" wx:for="{{course}}" wx:for-item="item" data-Id="{{item.id}}" bind:tap="toClassDetails">
+    <!-- 课程封面 -->
+    <view>
+      <image mode="aspectFill" src="{{item.img}}" class="item-img"></image>
+      <!-- 课程名称 -->
+      <view class="title-container">
+        <view class="item-title">{{item.title}}</view>
+      </view>
+    </view>
+    <!-- 讲堂footer -->
+    <view class="footer-container">
+      <view class="footer-item-container">
+        <image src="../../../assets/image/otherIcon/classlist-itemicon.png" class="footer-icon"></image>
+        <view class="footer-text">
+          参加学习
+          <text>{{item.num}}</text>
+          人
+        </view>
+      </view>
+      <view class="footer-item-container">
+        <view class="footer-text">
+          主讲老师 ：
+          <text>{{item.teacher}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

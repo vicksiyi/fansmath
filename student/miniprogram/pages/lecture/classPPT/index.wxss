@@ -1,0 +1,94 @@
+.video {
+  width: 700rpx;
+  height: 400rpx;
+  margin: 30rpx auto;
+  background: #f8f8f9;
+  border: 1rpx dotted #dddee1;
+}
+
+.ppt {
+  position: relative;
+}
+
+.ppt .up-down {
+  position: absolute;
+  width: 80rpx;
+  height: 400rpx;
+  top: 0;
+  right: 0;
+  background-color: #e8eaec;
+  border-radius: 100rpx 0 0 100rpx;
+  box-shadow: 0 0 10px 10px #e8eaec inset;
+}
+
+.ppt .up-down image {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 100rpx 10rpx 0 10rpx;
+}
+
+.ppt .up-down view {
+  height: 200rpx;
+  width: 80rpx;
+}
+
+.ppt .up-down .up {
+  border-radius: 100rpx 0 0 0;
+}
+
+.ppt .up-down .down {
+  border-radius: 0 0 0 100rpx;
+}
+
+.hover-up-down {
+  background: #fff;
+  opacity: 0.2;
+  background-image: linear-gradient(#e8eaec, #e8eaec);
+}
+
+swiper {
+  width: 700rpx;
+  height: 400rpx;
+}
+
+swiper-item > image {
+  width: 700rpx;
+  height: 400rpx;
+}
+
+.swipter-box .wx-swiper-dots {
+  position: relative;
+  left: unset !important;
+  right: 0;
+  margin-left: 20rpx;
+}
+
+.video .null-video {
+  width: 600rpx;
+  height: 360rpx;
+  margin: 20rpx 50rpx 20rpx 50rpx;
+}
+
+.video .null-video .img {
+  width: 300rpx;
+  height: 300rpx;
+  margin: auto;
+}
+
+.video .null-video .img image {
+  width: 220rpx;
+  height: 220rpx;
+  margin: 40rpx;
+}
+
+.video .null-video .title {
+  color: #e9eaec;
+  font-size: 30rpx;
+  font-weight: normal;
+  text-align: center;
+}
+
+video {
+  width: 700rpx;
+  height: 400rpx;
+}

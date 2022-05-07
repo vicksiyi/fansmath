@@ -3,8 +3,46 @@
     "pages/signIn/index/index",
     "pages/signIn/login/index",
     "pages/signIn/register/index",
-    "pages/signIn/welcome/index"
+    "pages/signIn/welcome/index",
+    "pages/lecture/classList/index",
+    "pages/assignment/examDetail/index",
+    "pages/interactive/message/index",
+    "pages/my/mine/index",
+    "pages/lecture/classDetails/index",
+    "pages/lecture/classPPT/index",
+    "pages/lecture/classVideo/index",
+    "pages/lecture/teacherDetails/index"
   ],
+  "tabBar": {
+    "color": "#808695",
+    "selectedColor": "#2DB7F5",
+    "list": [
+      {
+        "pagePath": "pages/lecture/classList/index",
+        "text": "讲堂",
+        "iconPath": "assets/image/tabBarIcon/classlist.png",
+        "selectedIconPath": "assets/image/tabBarIcon/classlist-fill.png"
+      },
+      {
+        "pagePath": "pages/assignment/examDetail/index",
+        "text": "考试情况",
+        "iconPath": "assets/image/tabBarIcon/template.png",
+        "selectedIconPath": "assets/image/tabBarIcon/template-fill.png"
+      },
+      {
+        "pagePath": "pages/interactive/message/index",
+        "text": "消息",
+        "iconPath": "assets/image/tabBarIcon/email.png",
+        "selectedIconPath": "assets/image/tabBarIcon/email-fill.png"
+      },
+      {
+        "pagePath": "pages/my/mine/index",
+        "text": "我的",
+        "iconPath": "assets/image/tabBarIcon/mine.png",
+        "selectedIconPath": "assets/image/tabBarIcon/mine-fill.png"
+      }
+    ]
+  },
   "window": {
     "backgroundColor": "#2db7f5",
     "backgroundTextStyle": "light",

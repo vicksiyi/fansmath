@@ -3,10 +3,10 @@
     <image src="../../../assets/image/main-logo.jpg" class="logo-img"></image>
   </view>
   <view>
-    <button class="key-login-btn" bindtap="getUserProfile">一键登录</button>
+    <button class="key-login-btn" bindtap="toLogin">一键登录</button>
   </view>
   <view class="account-login-container">
-    <view class="account-login-text" bind:tap="toLogin">数学迷账号注册/登录</view>
+    <view class="account-login-text" bindtap="toAccountLogin">数学迷账号注册/登录</view>
     <image src="../../../assets/image/otherIcon/arrow-right.png" class='account-login-icon'></image>
   </view>
   <view class="tip-container">

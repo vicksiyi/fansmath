@@ -1,0 +1,56 @@
+<view>
+    <!-- 头部container -->
+    <view class="header-container">
+        <view class="info-container">
+            <view>
+                <image src="{{teacherDetails.avatarUrl}}" class="info-icon"></image>
+            </view>
+            <view>
+                <view class="info-name">{{teacherDetails.name}}</view>
+                <view class="info-title-school">
+                    {{teacherDetails.level}} | {{teacherDetails.school}}
+                </view>
+            </view>
+        </view>
+        <view class="info-line"></view>
+        <!-- 简介container -->
+        <view class="info-context">{{teacherDetails.desc}}</view>
+    </view>
+    <!-- 内容container -->
+    <view class="context-container">
+        <i-tabs current="{{ current }}" bind:change="handleChange">
+            <i-tab key="tab1" title="主讲课程"></i-tab>
+            <i-tab key="tab2" title="问答回答"></i-tab>
+        </i-tabs>
+        <view wx:if="{{tab1}}">
+            <view class="class-container">
+                <view class="class-item-container" wx:for="{{teacherCourse}}" wx:for-item="class" wx:key="key">
+                    <view>
+                        <image mode="aspectFill" src="{{class.img}}" class="class-img"></image>
+                    </view>
+                    <view class="class-text">{{class.title}}</view>
+                </view>
+            </view>
+            <view wx:if="{{!teacherCourse.length}}">
+                <i-load-more tip="暂无数据" loading="{{ false }}" />
+            </view>
+        </view>
+        <view wx:if="{{tab2}}">
+            <view class="answer-container" wx:for="{{answerArr}}" wx:for-item="answer" wx:key="key">
+                <view class="answer-item-container">
+                    <view class="answer-date-class">
+                        <text class="answer-date">发表于 {{answer.date}}</text>
+                        |
+                        <text class="answer-class">来自 {{answer.class}}</text>
+                    </view>
+                    <view class="answer-teacher">{{answer.reply}}</view>
+                    <view class="answer-question">
+                        <view class="question-container">
+                            {{answer.studentName}} • {{answer.studentSchool}} ：{{answer.studentQuestion}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
