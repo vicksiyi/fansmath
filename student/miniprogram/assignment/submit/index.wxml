@@ -1,0 +1,65 @@
+<!-- 
+  1、选择题 题目：照片&文字；选答题：照片&文字
+  2、填空题 题目：照片&文字；
+  3、简答题 题目：照片&文字；答案：文字&照片列表
+-->
+<swiper style="height:{{height}}px;" current="{{current}}" bindchange="swiperChange">
+  <!-- 图片 -->
+  <block wx:for="{{examList}}">
+    <swiper-item>
+      <view class="topic" style="height:{{height}}px;">
+        <!-- 题目 -->
+        <view class="title">
+          <view>{{index+1}}. </view>
+          <image mode="aspectFit" bindtap="showImage" data-Url="/assets/temp/1.png"
+            src="/assets/temp/1.png"></image>
+        </view>
+        <view class="line"></view>
+        <view wx:if="{{item.type == 0}}" class="result">
+          <radio-group bindchange="radioChange">
+            <view class="item">
+              <radio color="#2d8cf0" value="0" checked="true" /> A:<image mode="aspectFit"
+                bindtap="showImage" data-Url="/assets/temp/2.png"
+                src="/assets/temp/2.png">
+              </image>
+            </view>
+            <view class="item">
+              <radio color="#2d8cf0" value="1" /> B:<image mode="aspectFit" bindtap="showImage"
+                data-Url="/assets/temp/3.png" src="/assets/temp/3.png">
+              </image>
+            </view>
+            <view class="item">
+              <radio color="#2d8cf0" value="2" /> C:<image bindtap="showImage"
+                data-Url="/assets/temp/4.png" mode="aspectFit"
+                src="/assets/temp/4.png"></image>
+            </view>
+            <view class="item">
+              <radio color="#2d8cf0" value="3" /> D:<image mode="aspectFit" bindtap="showImage"
+                data-Url="/assets/temp/5.png" src="/assets/temp/5.png">
+              </image>
+            </view>
+          </radio-group>
+        </view>
+        <view wx:else>
+          <i-panel title="上传答案">
+            <view class="img-list">
+              <view class="img" bindtap="showImage" data-Url="/assets/temp/1.png">
+                <image mode="aspectFit" src="/assets/temp/1.png"></image>
+              </view>
+            </view>
+          </i-panel>
+        </view>
+        <view class="btn-container">
+          <button class="btn-sumbit" wx:if="{{index==0}}" disabled="true">上一题</button>
+          <button class="btn-sumbit" bindtap="pre" wx:else>上一题</button>
+          <button class="btn-sumbit" wx:if="{{index==examList.length - 1}}" disabled="true">下一题</button>
+          <button class="btn-sumbit" bindtap="next" wx:else>下一题</button>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 题目上帝视角 -->
+<view class="widget" bindtap="showWidget">
+  <image src="/assets/image/otherIcon/exam-list.png"></image>
+</view>

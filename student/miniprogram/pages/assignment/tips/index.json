@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "i-message": "../../../dist/message/index"
-  },
-  "navigationBarTitleText": "考试声明"
-}

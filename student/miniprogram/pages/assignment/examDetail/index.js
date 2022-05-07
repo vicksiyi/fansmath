@@ -10,7 +10,7 @@ Page({
     itemArr: [
       {
         id: 0,
-        img: "../../../assets/image/math.jpeg",
+        img: "/assets/image/math.jpeg",
         title: "高等数学（上）",
         classCount: "200",
         createdTime: "2020-01-29",
@@ -37,22 +37,22 @@ Page({
   },
   navTab1: function (e) {
     wx.navigateTo({
-      url: `../tips/index`,
+      url: `/assignment/tips/index`,
     })
   },
   navTab2: function () {
     wx.navigateTo({
-      url: '../submit/index',
+      url: '/assignment/submit/index',
     })
   },
   navTab3: function () {
     wx.navigateTo({
-      url: '../done/index',
+      url: '/assignment/done/index',
     })
   },
   navTab4: function () {
     wx.navigateTo({
-      url: '../classResult/index',
+      url: '/assignment/classResult/index',
     })
   }
 })

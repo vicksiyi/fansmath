@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-rate": "../../dist/rate/index",
+    "i-collapse": "../../dist/collapse/index",
+    "i-collapse-item": "../../dist/collapse-item/index"
+  }
+}

@@ -1,0 +1,17 @@
+<i-cell-group>
+  <i-cell title="账号绑定" label="账号绑定、密码修改等" is-link url="/setting/account/index">
+    <i-icon slot="icon" type="addressbook" />
+  </i-cell>
+  <i-cell title="操作记录" label="用户登录信息等" is-link url="/setting/loginLog/index">
+    <i-icon slot="icon" type="barrage" />
+  </i-cell>
+  <i-cell title="实名认证" is-link url="/setting/realNameOauth/index">
+    <i-icon slot="icon" type="businesscard" />
+  </i-cell>
+  <i-cell title="学籍认证" is-link url="/setting/studentOauth/index">
+    <i-icon slot="icon" type="flashlight" />
+  </i-cell>
+  <i-cell title="常见问题" is-link url="/setting/issue/index">
+    <i-icon slot="icon" type="feedback" />
+  </i-cell>
+</i-cell-group>

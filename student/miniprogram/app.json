@@ -7,29 +7,56 @@
     "pages/lecture/classList/index",
     "pages/assignment/examDetail/index",
     "pages/interactive/message/index",
-    "pages/my/mine/index",
-    "pages/lecture/classDetails/index",
-    "pages/lecture/classPPT/index",
-    "pages/lecture/classVideo/index",
-    "pages/lecture/teacherDetails/index",
-    "pages/assignment/tips/index",
-    "pages/assignment/exam/index",
-    "pages/assignment/done/index",
-    "pages/assignment/classResult/index",
-    "pages/my/myInfo/index",
-    "pages/my/myClass/index",
-    "pages/my/myForward/index",
-    "pages/my/myLog/index",
-    "pages/my/setting/index",
-    "pages/my/answer/index",
-    "pages/setting/account/index",
-    "pages/setting/email/index",
-    "pages/setting/issue/index",
-    "pages/setting/loginLog/index",
-    "pages/setting/modifyPassword/index",
-    "pages/setting/phone/index",
-    "pages/setting/realNameOauth/index",
-    "pages/setting/studentOauth/index"
+    "pages/my/mine/index"
+  ],
+  "subPackages": [
+    {
+      "root": "lecture",
+      "pages": [
+        "classDetails/index",
+        "classPPT/index",
+        "classVideo/index",
+        "teacherDetails/index"
+      ]
+    },
+    {
+      "root": "assignment",
+      "pages": [
+        "tips/index",
+        "exam/index",
+        "done/index",
+        "classResult/index",
+        "submit/index"
+      ]
+    },
+    {
+      "root": "interactive",
+      "pages": []
+    },
+    {
+      "root": "my",
+      "pages": [
+        "myInfo/index",
+        "myClass/index",
+        "myForward/index",
+        "myLog/index",
+        "setting/index",
+        "answer/index"
+      ]
+    },
+    {
+      "root": "setting",
+      "pages": [
+        "account/index",
+        "email/index",
+        "issue/index",
+        "loginLog/index",
+        "modifyPassword/index",
+        "phone/index",
+        "realNameOauth/index",
+        "studentOauth/index"
+      ]
+    }
   ],
   "tabBar": {
     "color": "#808695",

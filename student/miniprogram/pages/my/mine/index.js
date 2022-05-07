@@ -43,37 +43,37 @@ Page({
   // 跳转至个人信息页
   toMyInfo: function () {
     wx.navigateTo({
-      url: "../myInfo/index",
+      url: "/my/myInfo/index",
     });
   },
   // 跳转至我的课堂
   toMyClass: function () {
     wx.navigateTo({
-      url: "../myClass/index",
+      url: "/my/myClass/index",
     });
   },
   // 跳转至我的关注
   toMyForward: function () {
     wx.navigateTo({
-      url: "../myForward/index",
+      url: "/my/myForward/index",
     });
   },
   // 跳转至学习记录
   toMyLog: function () {
     wx.navigateTo({
-      url: "../myLog/index",
+      url: "/my/myLog/index",
     });
   },
   // 跳转至反馈/客服
   toAnswer: function () {
     wx.navigateTo({
-      url: "../answer/index",
+      url: "/my/answer/index",
     });
   },
   // 跳转至反馈/客服
   toSetting: function () {
     wx.navigateTo({
-      url: "../setting/index",
+      url: "/my/setting/index",
     });
   },
   /**

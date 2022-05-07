@@ -1,0 +1,318 @@
+<!--pages/lecture/classDetails/index.wxml-->
+<view>
+    <scroll-view scroll-y="true" class="{{showClassModal || showAnswerModal ? 'noscroll' : ''}}">
+        <view>
+            <view class="detail-title">{{deatilData.title}}</view>
+            <view class="detail-note">
+                <view class="detail-note-text">{{deatilData.teachers}}</view>
+                <view class="detail-note-text">参加学习 {{deatilData.count}} 人</view>
+            </view>
+            <view class="detail-introduct">
+                <view class="detail-context">课程简介：{{deatilData.courseIntroduct}}</view>
+            </view>
+            <!-- 课程详情 -->
+            <!-- 课程概述 -->
+            <view>
+                <!-- icon&&标题 -->
+                <view class="sedtitle-container">
+                    <image src="/assets/image/otherIcon/detail-overview.png" class="sedtitle-img"></image>
+                    <veiw class="sedtitle-text">课程概述</veiw>
+                </view>
+                <!-- 课程概述内容 -->
+                <view class="detail-context">{{deatilData.courseOverview}}</view>
+            </view>
+            <!-- 授课目标 -->
+            <view>
+                <!-- icon&&标题 -->
+                <view class="sedtitle-container">
+                    <image src="/assets/image/otherIcon/detail-target.png" class="sedtitle-img "></image>
+                    <veiw class="sedtitle-text">授课目标</veiw>
+                </view>
+                <!-- 授课目标内容 -->
+                <view class="detail-context">{{deatilData.courseTarget}}</view>
+            </view>
+            <!-- 教学团队 -->
+            <view wx:if="{{teachers.length != 0}}">
+                <!-- icon&&标题 -->
+                <view class="sedtitle-container">
+                    <image src="/assets/image/otherIcon/detail-teacher.png" class="sedtitle-img "></image>
+                    <veiw class="sedtitle-text">教学团队</veiw>
+                </view>
+                <!-- 教学团队列表（轮播） -->
+                <scroll-view scroll-x="true" style="white-space:nowrap; display: flex">
+                    <view class="teacher-team-container" wx:for="{{teachers}}" wx:for-item="teacher" wx:key="key">
+                        <view class="teacher-item-container" data-Id="{{teacher.userId}}" bind:tap="toTeacherDetails">
+                            <view>
+                                <image src="{{teacher.img}}" class="teacher-item-img"></image>
+                            </view>
+                            <view>
+                                <view class="teacher-item-name">{{teacher.name}}</view>
+                                <view class="teacher-item-title">{{teacher.title}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+            <!-- 课程占分比例 -->
+            <view wx:if="{{isScale}}">
+                <!-- icon&&标题 -->
+                <view class="sedtitle-container">
+                    <image src="/assets/image/otherIcon/detail-proportion.png" class="sedtitle-img"></image>
+                    <veiw class="sedtitle-text">课程占分比例</veiw>
+                </view>
+                <!-- 课程概述内容 -->
+                <view class="statistical">
+                    <view style="width:100%;height:400rpx;">
+                        <canvas canvas-id="pieCanvas" class="canvas" style="width:100%;height:400rpx;"></canvas>
+                    </view>
+                </view>
+            </view>
+            <!-- 在线教程 -->
+            <view>
+                <!-- icon&&标题 -->
+                <view class="sedtitle-container">
+                    <image src="/assets/image/otherIcon/detail-courses.png" class="sedtitle-img "></image>
+                    <veiw class="sedtitle-text">在线教程</veiw>
+                </view>
+                <!-- 在线教程内容 -->
+                <view class="class-answer-container">
+                    <view class="outline-container">
+                        <image src="/assets/image/otherIcon/detail-outline.png" class="outline-icon"></image>
+                        <view class="outline-text">课程大纲</view>
+                    </view>
+                    <!-- 章节container -->
+                    <view class="{{!showClassMore? 'hiddenmore' : ''}}">
+                        <view wx:for="{{classArr}}" wx:for-item="firstItem" wx:key="key" wx:for-index="idx" class="{{idx>0 ? 'more-item' : ''}}">
+                            <view class="first-title-container">
+                                <view class="first-title-text ">{{firstItem.firstTitle}}</view>
+                            </view>
+                            <view>
+                                <view class="second-container" wx:for="{{firstItem.secondData}}" wx:for-item="secondItem" wx:key="key">
+                                    <view class="second-title-container">
+                                        <view class="title-item">
+                                            <image src="/assets/image/otherIcon/detail-circle.png" class="second-title-icon"></image>
+                                            <view class="second-third-text">
+                                                {{secondItem.secondTitle}}
+                                            </view>
+                                        </view>
+                                        <!-- <veiw class="title-item">
+                                            <view wx:if="{{secondItem.pdfUrl}}">
+                                                <image src="/assets/image/otherIcon/detail-pdf.png"
+                                                    class="last-title-icon" data-Url="{{item.pdfUrl}}" bind:tap="toClassPPT"></image>
+                                            </view>
+                                            <view wx:if="{{secondItem.videoUrl}}">
+                                                <image src="/assets/image/otherIcon/detail-video.png"
+                                                    class="last-title-icon" bind:tap="toClassVideo"></image>
+                                            </view>
+                                        </veiw> -->
+                                    </view>
+                                    <view class="third-title-container" wx:for="{{secondItem.thirdData}}" wx:for-item="thirdItem" wx:key="key">
+                                        <view class="title-item">
+                                            <image src="/assets/image/otherIcon/detail-circle.png" class="second-title-icon"></image>
+                                            <view class="second-third-text">
+                                                {{thirdItem.thirdTitle}}
+                                            </view>
+                                        </view>
+                                        <block>
+                                            <view class="title-item">
+                                                <view wx:if="{{thirdItem.pptSrc}}">
+                                                    <image src="/assets/image/otherIcon/detail-pdf.png" class="last-title-icon" data-Url="{{thirdItem.pdfUrl}}" bind:tap="toClassPPT"></image>
+                                                </view>
+                                                <view wx:if="{{thirdItem.videoSrc}}">
+                                                    <image src="/assets/image/otherIcon/detail-video.png" class="last-title-icon" data-Id="{{thirdItem.id}}" bind:tap="toClassVideo"></image>
+                                                </view>
+                                            </view>
+                                        </block>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <block wx:if="{{classArr.length>1}}">
+                            <view wx:if="{{showClassMore}}" bind:tap='classToggle' class="showMore-container">
+                                <view class="showMore-text">收起</view>
+                                <image src="/assets/image/otherIcon/detail-up.png" class="showMore-icon"></image>
+                            </view>
+                            <view wx:else bind:tap='classToggle' class="showMore-container">
+                                <view class="showMore-text">查看更多</view>
+                                <image src="/assets/image/otherIcon/detail-down.png" class="showMore-icon"></image>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <!-- 参考教材 -->
+            <view wx:if="{{bookArr.length}}">
+                <view class="sedtitle-container">
+                    <image src="/assets/image/otherIcon/class-book.png" class="sedtitle-img"></image>
+                    <veiw class="sedtitle-text">参考教材</veiw>
+                </view>
+                <view class="detail-context">
+                    <i-collapse name="0" accordion>
+                        <!-- 参考教材 -->
+                        <i-collapse-item wx:for="{{bookArr}}" wx:for-item="bookItem" wx:key="key" title="{{index + 1}}. 《{{bookItem.title}}》" name="{{index}}">
+                            <view class="show-list" slot="content">
+                                <!-- 教材简介 -->
+                                <view class="item">作者:{{bookItem.author}}</view>
+                                <view class="item">版本:第{{bookItem.version}}版</view>
+                                <view class="item">出版社:{{bookItem.press}}</view>
+                                <view class="item">ISBN:{{bookItem.isbn}}</view>
+                                <!-- 教材图片 -->
+                                <view class="img">
+                                    <image mode="aspectFill" src="{{bookItem.img}}" class="material-img"></image>
+                                </view>
+                            </view>
+                        </i-collapse-item>
+                    </i-collapse>
+                </view>
+                <view></view>
+            </view>
+            <view class="caption-wrap"></view>
+            <!-- 互动问答 -->
+            <view>
+                <!-- icon&&标题 -->
+                <view class="sedtitle-container">
+                    <image src="/assets/image/otherIcon/detail-qa.png" class="sedtitle-img"></image>
+                    <veiw class="sedtitle-text">互动问答</veiw>
+                </view>
+                <view class="class-answer-container {{!showMore? 'hiddenmore' : ''}}">
+                    <view wx:for="{{answerArr}}" wx:for-item="item" wx:for-index="idx" wx:key="key" class="answer-item-container {{idx>2 ? 'more-item' : ''}}">
+                        <view class="answer-info">
+                            <view class="answer-img-text">
+                                <image src="{{item.avatar}}" class="answer-info-img"></image>
+                                <view class="answer-info-text">
+                                    {{item.name}} • {{item.school}}
+                                </view>
+                            </view>
+                            <view class="answer-info-date">{{item.date}}</view>
+                        </view>
+                        <view class="answer-question">{{item.question}}</view>
+                        <view class="count-container">
+                            <view class="count-text">{{item.viewCount}} 查看</view>
+                            <view class="count-text">{{item.lookCount}} 围观</view>
+                            <view class="count-answer-container">
+                                <image src="/assets/image/otherIcon/detail-message.png" class="count-answer-icon"></image>
+                                <view class="count-answer-text" bind:tap="openAnswerModal">
+                                    {{item.answerCount}} 回答
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <block wx:if="{{answerArr.length>3}}">
+                        <view wx:if="{{showMore}}" bind:tap='listToggle' class="showMore-container">
+                            <view class="showMore-text">收起</view>
+                            <image src="/assets/image/otherIcon/detail-up.png" class="showMore-icon"></image>
+                        </view>
+                        <view wx:else bind:tap='listToggle' class="showMore-container">
+                            <view class="showMore-text">查看更多</view>
+                            <image src="/assets/image/otherIcon/detail-down.png" class="showMore-icon"></image>
+                        </view>
+                    </block>
+                </view>
+            </view>
+            <!-- 课程大纲 -->
+            <!-- 课程大纲遮罩 -->
+            <view class="outline-modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showClassModal}}"></view>
+            <view class="outline-answer-container" wx:if="{{showClassModal}}">
+                <view class="outline-answer-header">
+                    <view class="outline-answer-text">课程大纲</view>
+                    <image src="/assets/image/otherIcon/detail-modalClose.png" class="outline-answer-icon" bind:tap="closeClassModal"></image>
+                </view>
+                <scroll-view scroll-y="{{true}}" class="outline-modal-context">
+                    <view wx:for="{{classArr}}" wx:for-item="firstItem" wx:key="key" wx:for-index="idx">
+                        <view class="first-title-text ">{{firstItem.firstTitle}}</view>
+                        <view>
+                            <view class="second-container" wx:for="{{firstItem.secondData}}" wx:for-item="secondItem" wx:key="key">
+                                <view class="second-title-container">
+                                    <view class="title-item">
+                                        <image src="/assets/image/otherIcon/detail-circle.png" class="second-title-icon"></image>
+                                        <view class="second-third-text">
+                                            {{secondItem.secondTitle}}
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="third-title-container" wx:for="{{secondItem.thirdData}}" wx:for-item="thirdItem" wx:key="key">
+                                    <view class="title-item">
+                                        <image src="/assets/image/otherIcon/detail-circle.png" class="second-title-icon"></image>
+                                        <view class="second-third-text">
+                                            {{thirdItem.thirdTitle}}
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+            <!-- 回答详情 -->
+            <view class="outline-modal-mask" catchtouchmove="preventTouchMove" wx:if="{{showAnswerModal}}"></view>
+            <view class="outline-answer-container" wx:if="{{showAnswerModal}}">
+                <view class="outline-answer-header">
+                    <view class="outline-answer-text">问答回答</view>
+                    <image src="/assets/image/otherIcon/detail-modalClose.png" class="outline-answer-icon" bind:tap="closeAnswerModal"></image>
+                </view>
+                <scroll-view scroll-y="{{true}}" class="outline-modal-context">
+                    <view class="answer-modal-question">
+                        <image src="/assets/image/otherIcon/detail-answer.png" class="answer-modal-icon" bind:tap="closeAnswerModal"></image>
+                        <view class="answer-modal-text">可导与可微有何关系？</view>
+                    </view>
+                    <view wx:for="{{answerArr}}" wx:for-item="item" wx:for-index="idx" wx:key="key">
+                        <view class="answer-info">
+                            <view class="answer-img-text">
+                                <image src="{{item.avatar}}" class="answer-detail-avatar"></image>
+                                <view class="answer-info-text">
+                                    {{item.name}} • {{item.school}}
+                                </view>
+                            </view>
+                            <view class="answer-info-date">{{item.date}}</view>
+                        </view>
+                        <view class="answer-question">{{item.answer}}</view>
+                        <view class="answer-line"></view>
+                    </view>
+                </scroll-view>
+            </view>
+            <!-- 课程评价 -->
+            <view>
+                <!-- icon&&标题 -->
+                <view class="sedtitle-container">
+                    <image src="/assets/image/otherIcon/detail-classAnswer.png" class="sedtitle-img"></image>
+                    <veiw class="sedtitle-text">课程评价</veiw>
+                </view>
+                <view class="class-answer-container {{!showMore? 'hiddenmore' : ''}}">
+                    <view wx:for="{{classAnswerArr}}" wx:for-item="item" wx:for-index="idx" wx:key="key" class="answer-item-container {{idx>2 ? 'more-item' : ''}}">
+                        <view class="answer-info">
+                            <view class="answer-img-text">
+                                <image src="{{item.avatar}}" class="answer-info-img"></image>
+                                <view class="answer-info-text">
+                                    {{item.name}} • {{item.school}}
+                                </view>
+                            </view>
+                            <view class="answer-info-date">
+                                <i-rate count="{{5}}" value="{{item.rate}}"></i-rate>
+                            </view>
+                        </view>
+                        <view class="answer-question">{{item.question}}</view>
+                        <view class="count-class-container">
+                            <view class="good">
+                                <view class="img">
+                                    <image src="/assets/image/otherIcon/detail-good.png"></image>
+                                </view>
+                                <view class="num">{{item.good}}</view>
+                            </view>
+                            <view class="time">{{item.date}}</view>
+                        </view>
+                    </view>
+                    <block wx:if="{{answerArr.length>3}}">
+                        <view wx:if="{{showMore}}" bind:tap='listToggle' class="showMore-container">
+                            <view class="showMore-text">收起</view>
+                            <image src="/assets/image/otherIcon/detail-up.png" class="showMore-icon"></image>
+                        </view>
+                        <view wx:else bind:tap='listToggle' class="showMore-container">
+                            <view class="showMore-text">查看更多</view>
+                            <image src="/assets/image/otherIcon/detail-down.png" class="showMore-icon"></image>
+                        </view>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

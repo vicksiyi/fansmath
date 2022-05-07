@@ -1,0 +1,51 @@
+<i-panel title="身份信息">
+  <i-input value="{{ name }}" title="真实姓名" placeholder="请输入真实姓名" />
+  <i-input value="{{ idcard }}" type="idcard" title="身份证号码" placeholder="请输入身份证号码" />
+  <view class="img-card">
+    <view class="item">
+      <view class="img">
+        <image src="/assets/image/otherIcon/setting/idcard0.png"></image>
+      </view>
+      <view>上传身份证正面</view>
+    </view>
+    <view class="item">
+      <view class="img">
+        <image src="/assets/image/otherIcon/setting/idcard1.png"></image>
+      </view>
+      <view>上传身份证背面</view>
+    </view>
+  </view>
+</i-panel>
+<button class="btn">
+  上传审核
+</button>
+<i-panel title="认证状态">
+  <view class="status">
+    <i-steps current="{{current}}">
+      <i-step>
+        <view slot="title">
+          上传审核
+        </view>
+        <view slot="content">
+          填写相关信息
+        </view>
+      </i-step>
+      <i-step>
+        <view slot="title">
+          等待审核
+        </view>
+        <view slot="content">
+          等待管理员审核
+        </view>
+      </i-step>
+      <i-step>
+        <view slot="title">
+          审核完成
+        </view>
+        <view slot="content">
+          实名认证完毕
+        </view>
+      </i-step>
+    </i-steps>
+  </view>
+</i-panel>

@@ -1,0 +1,82 @@
+<i-panel title="学籍信息">
+  <i-input value="{{ name }}" title="真实姓名" placeholder="请输入真实姓名" />
+  <i-input value="{{ school }}" title="院校名称" placeholder="请输入院校名称" />
+  <i-input value="{{ endTime }}" title="毕业时间" bind:focus="openendTimePicker" placeholder="点击选择毕业时间" />
+  <i-input value="{{ myLevel }}" title="学历层次" bind:focus="openlevelPicker" placeholder="点击选择学历层次" />
+  <view class="img-card">
+    <view class="item">
+      <view class="img">
+        <image src="/assets/image/otherIcon/setting/upload.png"></image>
+      </view>
+      <view>上传学生证封面</view>
+    </view>
+    <view class="item">
+      <view class="img">
+        <image src="/assets/image/otherIcon/setting/upload.png"></image>
+      </view>
+      <view>上传学生证正面</view>
+    </view>
+  </view>
+</i-panel>
+<button class="btn">
+  上传审核
+</button>
+<i-panel title="认证状态">
+  <view class="status">
+    <i-steps current="{{current}}">
+      <i-step>
+        <view slot="title">
+          上传审核
+        </view>
+        <view slot="content">
+          填写相关信息
+        </view>
+      </i-step>
+      <i-step>
+        <view slot="title">
+          等待审核
+        </view>
+        <view slot="content">
+          等待管理员审核
+        </view>
+      </i-step>
+      <i-step>
+        <view slot="title">
+          审核完成
+        </view>
+        <view slot="content">
+          学籍认证完毕
+        </view>
+      </i-step>
+    </i-steps>
+  </view>
+</i-panel>
+
+<view class="context-container">
+  <view class='pickerview'>
+    <picker-view indicator-class='picker-col' bindchange="endTimePickerChange"
+      class="{{ endTimePickerShow ? 'show' : '' }}">
+      <view class='btns'>
+        <view bind:tap="closeendTimePicker">取消</view>
+        <view bind:tap="sumbitendTimePicker">确认</view>
+      </view>
+      <picker-view-column>
+        <view wx:for="{{years}}" style="line-height: 50rpx">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>
+<view class="context-container">
+  <view class='pickerview'>
+    <picker-view indicator-class='picker-col' bindchange="levelPickerChange"
+      class="{{ levelPickerShow ? 'show' : '' }}">
+      <view class='btns'>
+        <view bind:tap="closeLevelPicker">取消</view>
+        <view bind:tap="sumbitLevelPicker">确认</view>
+      </view>
+      <picker-view-column>
+        <view wx:for="{{level}}" style="line-height: 50rpx">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

@@ -1,0 +1,134 @@
+<i-panel title="课程">
+  <view class="border-class">
+    <!-- 课程封面 -->
+    <view>
+      <image mode="aspectFill" src="{{class.img}}" class="item-img"></image>
+      <!-- 课程名称 -->
+      <view class="title-container">
+        <view class="item-title">{{class.title}}</view>
+      </view>
+    </view>
+    <!-- 讲堂footer -->
+    <view class="footer-container">
+      <view class="footer-item-container">
+        <image src="/assets/image/otherIcon/classlist-itemicon.png" class="footer-icon"></image>
+        <view class="footer-text">
+          参加学习
+          <text>{{class.classCount}}</text>
+          人
+        </view>
+      </view>
+      <view class="footer-item-container">
+        <image src="/assets/image/otherIcon/classlist-time.png" class="footer-icon"></image>
+        <view class="footer-text">
+          更新时间 ：
+          <text>{{class.createdTime}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</i-panel>
+
+<i-panel title="占分比例">
+  <!-- 课程占分比例 -->
+  <view>
+    <!-- 课程概述内容 -->
+    <view class="statistical">
+      <canvas canvas-id="pieCanvas" class="canvas" style="width:100%;height:400rpx;"></canvas>
+    </view>
+  </view>
+</i-panel>
+
+<i-panel title="线上考试成绩">
+  <view class="exam-list">
+    <view class="item" bindtap="navTab3">
+      <view class="tag">
+        <i-tag class="i-tags" name="章节考" color="green" type="border">
+          章节考
+        </i-tag>
+      </view>
+      <view class="title">
+        1.1.2 平面曲线切线xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      </view>
+      <view class="total" style="color:#2DB7F5;">72</view>
+    </view>
+    <view class="item">
+      <view class="tag">
+        <i-tag class="i-tags" name="章考" color="blue" type="border">
+          章考
+        </i-tag>
+      </view>
+      <view class="title">
+        第一章 微积分纵览
+      </view>
+      <view class="total" style="color:#ff9900;">90</view>
+    </view>
+    <view class="item">
+      <view class="tag">
+        <i-tag class="i-tags" name="期末考" color="yellow" type="border">
+          期末考
+        </i-tag>
+      </view>
+      <view class="title">
+        高等数学上
+      </view>
+      <view class="total" style="color:#ed3f14;">58</view>
+    </view>
+  </view>
+</i-panel>
+
+<i-panel title="线下考试成绩">
+  <view class="exam-list">
+    <view class="item" bindtap="navTab3">
+      <view class="tag">
+        <i-tag class="i-tags" name="章节考" color="green" type="border">
+          章节考
+        </i-tag>
+      </view>
+      <view class="title">
+        1.1.2 平面曲线切线xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      </view>
+      <view class="total" style="color:#2DB7F5;">72</view>
+    </view>
+    <view class="item">
+      <view class="tag">
+        <i-tag class="i-tags" name="章考" color="blue" type="border">
+          章考
+        </i-tag>
+      </view>
+      <view class="title">
+        第一章 微积分纵览
+      </view>
+      <view class="total" style="color:#ff9900;">90</view>
+    </view>
+    <view class="item">
+      <view class="tag">
+        <i-tag class="i-tags" name="期末考" color="yellow" type="border">
+          期末考
+        </i-tag>
+      </view>
+      <view class="title">
+        高等数学上
+      </view>
+      <view class="total" style="color:#ed3f14;">58</view>
+    </view>
+  </view>
+</i-panel>
+
+<i-panel title="平时成绩">
+  <view class="num">
+    90
+  </view>
+</i-panel>
+
+<view style="margin-bottom:30rpx;">
+  <i-panel title="老师评价">
+    <view class="msg">
+      这学期表现都不错，成绩也有所进步，望以后多加努力
+    </view>
+  </i-panel>
+</view>
+
+<view class="widget">
+  <image src="/assets/image/otherIcon/problem.png"></image>
+</view>

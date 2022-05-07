@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "i-panel": "../../../dist/panel/index",
-    "i-input": "../../../dist/input/index"
-  },
-  "navigationBarTitleText": "修改密码"
-}

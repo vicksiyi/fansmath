@@ -1,7 +1,7 @@
 <view class="mine-container">
   <view class="avatar-box">
     <view>
-      <image src="../../../assets/image/otherIcon/avatar.png" class="avatar-img"></image>
+      <image src="/assets/image/otherIcon/avatar.png" class="avatar-img"></image>
     </view>
     <view class="avatar-name">Hi,{{nickName}}</view>
     <view class="avatar-title">({{school}})</view>

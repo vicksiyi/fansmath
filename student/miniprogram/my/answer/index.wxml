@@ -1,0 +1,22 @@
+<i-panel title="上传图片   {{imageNum}}/9">
+  <view class="img-list">
+    <block wx:for="{{image}}">
+      <view class="item">
+        <image src="{{item}}"></image>
+      </view>
+    </block>
+    <view wx:if="{{imageNum < 9}}" class="item">
+      <image bindtap="addImage" src="/assets/image/otherIcon/answer/upload.png"></image>
+    </view>
+  </view>
+</i-panel>
+<i-panel title="反馈描述">
+  <view class="text-box">
+    <textarea name="review" maxlength="{{maxNumber}}" class="textArea" value="{{reviewText}}" bindinput='inputText'
+      placeholder="请输入反馈内容"></textarea>
+    <span class="wordwrap">{{number}}/{{maxNumber}}</span>
+  </view>
+</i-panel>
+<!-- <button open-type='feedback' type='primary'>意见反馈</button> -->
+<button bindtap="submit" style="width:80%;background:#2db7f5;color:#fff;margin-top:20rpx;">提交反馈</button>
+<i-message id="message" />

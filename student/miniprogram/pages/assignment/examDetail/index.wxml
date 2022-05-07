@@ -25,7 +25,7 @@
 </view>
 <view wx:if="{{current == 'tab2'}}">
   <view class="exam-list">
-    <view class="item">
+    <view class="item" bindtap="navTab2">
       <view class="tag">
         <i-tag class="i-tags" name="章考" color="green" type="border">章测试</i-tag>
       </view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-steps": "../../dist/steps/index",
+    "i-step": "../../dist/step/index",
+    "i-panel": "../../dist/panel/index"
+  },
+  "navigationBarTitleText": "学习记录"
+}
