@@ -1,2 +1,58 @@
-<!--pages/interactive/message/index.wxml-->
-<text>pages/interactive/message/index.wxml</text>
+<view>
+    <i-tabs current="{{ current }}" bind:change="messageTabChange">
+        <i-tab key="tab1" title="私聊"></i-tab>
+        <i-tab key="tab2" title="问答"></i-tab>
+    </i-tabs>
+    <view wx:if="{{tab1}}">
+        <view class="tab1-list">
+            <view class="tab1-item">
+                <i-badge count="123" overflow-count="19">
+                    <view class="item">
+                        <view class="img">
+                            <image
+                                src="https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3717120934,3932520698&fm=26&gp=0.jpg">
+                            </image>
+                        </view>
+                        <view class="name">王老师</view>
+                    </view>
+                </i-badge>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{tab2}}">
+        <!-- 消息-问答头部 -->
+        <view class="msg-header-container">
+            <view class="header-tip-container">
+                <image src="../../../assets/image/otherIcon/msg-square.png" class="header-tip-icon"></image>
+                <view class="header-tip-text">未回复问题</view>
+            </view>
+        </view>
+        <!-- 消息-问答列表 -->
+        <scroll-view scroll-y="{{true}}" class="msg-list-container">
+            <view wx:for="{{answerArr}}" wx:for-item="item" wx:key="key">
+                <!-- 已回复 -->
+                <view class="msg-item-container" wx:if="{{item.replied}}">
+                    <view class="item-header-container">
+                        <view>发表于 {{item.date}}</view>
+                        <view class="item-header-class">来自 {{item.class}}</view>
+                    </view>
+                    <view class="item-context">{{item.answer}}</view>
+                    <view class="item-question">
+                        <view>{{item.name}} • {{item.school}} ：</view>
+                        <view>{{item.question}}</view>
+                    </view>
+                </view>
+                <!-- 未回复 -->
+                <view class="noanswer-container" wx:if="{{!item.replied}}" bind:tap="toMsgAnswer">
+                    <view class="noanswer-inner-container">
+                        <view>来自 {{item.class}}</view>
+                        <view class="info-container">
+                            <view>{{item.name}} • {{item.school}} ：</view>
+                            <view>{{item.question}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
