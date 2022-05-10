@@ -28,6 +28,10 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
+body::-webkit-scrollbar {
+    width: 0 !important
+}
+
 a {
     color: #2d374b;
     text-decoration: none
@@ -42,7 +46,8 @@ em {
     font-style: normal
 }
 
-li {list-style: none
+li {
+    list-style: none
 }
 
 img {
@@ -59,6 +64,6 @@ p {
     word-wrap: break-word
 }
 
-html{
+html {
     overflow-x: hidden;
 }

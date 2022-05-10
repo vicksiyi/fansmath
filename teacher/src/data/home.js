@@ -18,10 +18,10 @@ const menu = [
                 url: "/class/mine",
             },
             {
-                path: "/class/invite",
-                name: "classInvite",
-                label: "课堂邀请",
-                url: "/class/invite",
+                path: "/class/team",
+                name: "classTeam",
+                label: "教学团队",
+                url: "/class/team",
             },
             {
                 path: "/class/room",
@@ -36,10 +36,10 @@ const menu = [
                 url: "/class/chat",
             },
             {
-                path: "/class/myinvite",
-                name: "classMyInvite",
+                path: "/class/invite",
+                name: "classInvite",
                 label: "我的邀请",
-                url: "/class/myinvite",
+                url: "/class/invite",
             }
         ],
     },

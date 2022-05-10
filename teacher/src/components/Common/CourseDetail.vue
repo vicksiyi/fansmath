@@ -64,7 +64,7 @@
 
 <script>
 export default {
-  name: "ClassDetail",
+  name: "CourseDetail",
   data() {
     return {
       img: require("@/assets/math.jpeg"),
@@ -74,10 +74,10 @@ export default {
 </script>
 
 <style scoped>
-.class-detail {
+/* .class-detail {
   max-height: 500px;
   overflow-y: scroll;
-}
+} */
 .detail-item {
   margin-top: 20px;
 }

@@ -1,7 +1,8 @@
 <template>
-  <div class="invite">
-    <!-- 课程列表 -->
-    <Show @show="show" @addTeacher="addTeacher"></Show>
+  <div class="my-invite">
+    <!-- 显示 -->
+    <Show @showCourseDetail="showCourseDetail"></Show>
+    <!-- 分页 -->
     <el-pagination
       style="margin-top: 20px"
       background
@@ -10,44 +11,36 @@
     >
     </el-pagination>
     <!-- 弹窗 -->
-    <el-drawer :title="isTitle" :visible.sync="drawer" :direction="direction">
-      <Teachers v-if="isShowList"></Teachers>
-      <AddTeacher v-else></AddTeacher>
+    <el-drawer title="课程详情" :visible.sync="drawer" :direction="direction">
+      <div class="course-detail">
+        <CourseDetail></CourseDetail>
+      </div>
     </el-drawer>
   </div>
 </template>
 
 <script>
 import Show from "@/components/Class/Invite/Show";
-import Teachers from "@/components/Class/Invite/Teachers";
-import AddTeacher from "@/components/Class/Invite/AddTeacher";
+import CourseDetail from "@/components/Common/CourseDetail";
 export default {
-  name: "ClassInvite",
-  components: { Show, Teachers, AddTeacher },
-  computed: {
-    isTitle() {
-      return this.isShowList ? "教师团队" : "添加教师";
-    },
-  },
+  name: "ClassMyInvite",
+  components: { Show, CourseDetail },
   data() {
     return {
       drawer: false,
-      direction: "rtl",
-      isShowList: false,
+      direction: "rtl"
     };
   },
   methods: {
-    show() {
+    showCourseDetail() {
       this.drawer = true;
-      this.isShowList = true;
-    },
-    addTeacher() {
-      this.drawer = true;
-      this.isShowList = false;
     },
   },
 };
 </script>
 
 <style scoped>
+.course-detail {
+  padding: 20px;
+}
 </style>

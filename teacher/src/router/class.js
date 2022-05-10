@@ -5,9 +5,9 @@ const route = [
         component: () => import("@/views/class/chat")
     },
     {
-        path: '/class/invite',
-        name: 'ClassInvite',
-        component: () => import("@/views/class/invite")
+        path: '/class/team',
+        name: 'ClassTeam',
+        component: () => import("@/views/class/team")
     },
     {
         path: '/class/mine',
@@ -20,9 +20,9 @@ const route = [
         component: () => import("@/views/class/room")
     },
     {
-        path: '/class/myinvite',
-        name: 'ClassMyInvite',
-        component: () => import("@/views/class/myinvite")
+        path: '/class/invite',
+        name: 'ClassInvite',
+        component: () => import("@/views/class/invite")
     }
 ]
 

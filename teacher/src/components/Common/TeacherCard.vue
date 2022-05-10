@@ -3,8 +3,20 @@
     <el-card>
       <el-descriptions class="margin-top" title="教师" :column="1" border>
         <template slot="extra">
-          <el-button type="danger" :loading="true" v-if="isDelete" size="mini">删除</el-button>
-          <el-button type="primary" :loading="true" v-if="isSearch" size="mini">添加</el-button>
+          <el-button
+            type="danger"
+            @click="action"
+            v-if="isDelete"
+            size="mini"
+            >删除</el-button
+          >
+          <el-button
+            type="primary"
+            @click="action"
+            v-if="isSearch"
+            size="mini"
+            >添加</el-button
+          >
         </template>
         <el-descriptions-item>
           <template slot="label">
@@ -49,6 +61,11 @@ export default {
     isSearch: {
       type: Boolean,
       default: false,
+    },
+  },
+  methods: {
+    action() {
+      this.$emit("action");
     },
   },
 };
