@@ -18,6 +18,11 @@ const route = [
         path: '/class/room',
         name: 'ClassRoom',
         component: () => import("@/views/class/room")
+    },
+    {
+        path: '/class/myinvite',
+        name: 'ClassMyInvite',
+        component: () => import("@/views/class/myinvite")
     }
 ]
 

@@ -34,6 +34,12 @@ const menu = [
                 name: "classChat",
                 label: "聊天管理",
                 url: "/class/chat",
+            },
+            {
+                path: "/class/myinvite",
+                name: "classMyInvite",
+                label: "我的邀请",
+                url: "/class/myinvite",
             }
         ],
     },

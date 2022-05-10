@@ -2,6 +2,13 @@
   <div class="invite">
     <!-- 课程列表 -->
     <Show @show="show" @addTeacher="addTeacher"></Show>
+    <el-pagination
+      style="margin-top: 20px"
+      background
+      layout="prev, pager, next"
+      :total="1000"
+    >
+    </el-pagination>
     <!-- 弹窗 -->
     <el-drawer :title="isTitle" :visible.sync="drawer" :direction="direction">
       <Teachers v-if="isShowList"></Teachers>
