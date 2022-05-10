@@ -1,13 +1,63 @@
 <template>
-  <div class="mine">ClassMine</div>
+  <div class="mine">
+    <!-- 开展课程 -->
+    <el-button type="primary" @click="addCourse">开展课程</el-button>
+    <!-- 目前课程 -->
+    <el-row style="margin-top: 10px" :gutter="20">
+      <el-col :span="16">
+        <el-card>
+          <Show></Show>
+          <el-pagination
+            style="margin-top: 20px"
+            background
+            layout="prev, pager, next"
+            :total="1000"
+          >
+          </el-pagination>
+        </el-card>
+      </el-col>
+      <el-col :span="8">
+        <el-card>
+          <ClassDetail></ClassDetail>
+        </el-card>
+      </el-col>
+    </el-row>
+    <!-- 弹窗开展课程 -->
+    <el-drawer
+      title="开展课程"
+      :visible.sync="drawer"
+      :direction="direction"
+      :before-close="handleClose"
+    >
+      <Submit></Submit>
+    </el-drawer>
+  </div>
 </template>
 
 <script>
+import Show from "@/components/Class/Show";
+import ClassDetail from "@/components/Class/ClassDetail";
+import Submit from "@/components/Class/Submit";
 export default {
-  name: 'ClassMine'
-}
+  name: "ClassMine",
+  components: { Show, ClassDetail, Submit },
+  data() {
+    return {
+      drawer: false,
+      direction: "rtl",
+    };
+  },
+  methods: {
+    addCourse() {
+      this.drawer = true;
+    },
+  },
+};
 </script>
 
-<style>
-
+<style scoped>
+.el-pagination {
+  text-align: center;
+  margin-top: 20px;
+}
 </style>
