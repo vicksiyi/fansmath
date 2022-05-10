@@ -16,8 +16,9 @@ import {
   MessageBox, Select, Message, Option, Drawer, Radio, RadioGroup,
   Upload, Alert, Pagination, DatePicker, TimePicker, Carousel,
   CarouselItem, Dialog, Descriptions, DescriptionsItem, Image,
-  Steps, Step, Tooltip, Loading,Progress
+  Steps, Step, Tooltip, Loading,Progress,empty
 } from 'element-ui';
+Vue.use(empty);
 Vue.use(Button);
 Vue.use(Row);
 Vue.use(Container);

@@ -27,7 +27,6 @@
       title="开展课程"
       :visible.sync="drawer"
       :direction="direction"
-      :before-close="handleClose"
     >
       <Submit></Submit>
     </el-drawer>
@@ -35,9 +34,9 @@
 </template>
 
 <script>
-import Show from "@/components/Class/Show";
-import ClassDetail from "@/components/Class/ClassDetail";
-import Submit from "@/components/Class/Submit";
+import Show from "@/components/Class/Mine/Show";
+import ClassDetail from "@/components/Class/Mine/ClassDetail";
+import Submit from "@/components/Class/Mine/Submit";
 export default {
   name: "ClassMine",
   components: { Show, ClassDetail, Submit },
