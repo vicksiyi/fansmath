@@ -34,6 +34,11 @@ export default new Router({
       component: () => import("@/views/register")
     },
     {
+      path: '/forget',
+      name: 'Forget',
+      component: () => import("@/views/forget")
+    },
+    {
       path: '/*',
       name: 'notFound',
       component: () => import("@/views/service/notFound")

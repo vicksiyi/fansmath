@@ -11,9 +11,9 @@
 <script>
 import Header from "@/components/Common/Header";
 import Footer from "@/components/Common/Footer";
-import Submit from "@/components/Login/Submit";
+import Submit from "@/components/Forget/Submit";
 export default {
-  name: "Login",
+  name: "Forget",
   components: { Header, Footer, Submit },
 };
 </script>
