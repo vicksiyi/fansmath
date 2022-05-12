@@ -19,10 +19,19 @@
       </el-table-column>
       <el-table-column label="操作" width="80">
         <template>
-          <el-button type="success" @click="addTeacher" size="mini">添加</el-button>
+          <el-button type="success" @click="addTeacher" size="mini"
+            >添加</el-button
+          >
         </template>
       </el-table-column>
     </el-table>
+    <el-pagination
+      style="margin-top: 20px"
+      background
+      layout="prev, pager, next"
+      :total="1000"
+    >
+    </el-pagination>
   </div>
 </template>
 
@@ -84,8 +93,8 @@ export default {
       this.$emit("show");
     },
     addTeacher() {
-        this.$emit("addTeacher");
-    }
+      this.$emit("addTeacher");
+    },
   },
 };
 </script>

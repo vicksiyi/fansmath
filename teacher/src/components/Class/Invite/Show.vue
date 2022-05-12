@@ -30,6 +30,13 @@
         </template>
       </el-table-column>
     </el-table>
+    <el-pagination
+      style="margin-top: 20px"
+      background
+      layout="prev, pager, next"
+      :total="1000"
+    >
+    </el-pagination>
   </div>
 </template>
 

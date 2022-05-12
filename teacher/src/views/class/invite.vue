@@ -2,14 +2,6 @@
   <div class="my-invite">
     <!-- 显示 -->
     <Show @showCourseDetail="showCourseDetail"></Show>
-    <!-- 分页 -->
-    <el-pagination
-      style="margin-top: 20px"
-      background
-      layout="prev, pager, next"
-      :total="1000"
-    >
-    </el-pagination>
     <!-- 弹窗 -->
     <el-drawer title="课程详情" :visible.sync="drawer" :direction="direction">
       <div class="course-detail">

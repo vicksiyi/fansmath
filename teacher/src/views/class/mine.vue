@@ -7,13 +7,6 @@
       <el-col :span="16">
         <el-card>
           <Show></Show>
-          <el-pagination
-            style="margin-top: 20px"
-            background
-            layout="prev, pager, next"
-            :total="1000"
-          >
-          </el-pagination>
         </el-card>
       </el-col>
       <el-col :span="8">
@@ -53,7 +46,7 @@ export default {
 </script>
 
 <style scoped>
-.course-detail{
+.course-detail {
   max-height: 600px;
   overflow-y: scroll;
 }
