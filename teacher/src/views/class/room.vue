@@ -37,6 +37,14 @@
           <div class="content">
             <!-- 学生管理 -->
             <div v-if="active === 0"><StudentManage></StudentManage></div>
+            <div v-if="active === 1"><ChapterManage></ChapterManage></div>
+            <div v-if="active === 2">
+              <IntroductionManage></IntroductionManage>
+            </div>
+            <div v-if="active === 3"><OverviewManage></OverviewManage></div>
+            <div v-if="active === 4"><TargetManage></TargetManage></div>
+            <div v-if="active === 5"><ScaleManage></ScaleManage></div>
+            <div v-if="active === 6"><BookManage></BookManage></div>
           </div>
         </el-card>
       </el-col>
@@ -47,9 +55,23 @@
 <script>
 import { tools } from "@/data/room";
 import StudentManage from "@/components/Class/Room/StudentManage";
+import ChapterManage from "@/components/Class/Room/ChapterManage";
+import IntroductionManage from "@/components/Class/Room/IntroductionManage";
+import OverviewManage from "@/components/Class/Room/OverviewManage";
+import TargetManage from "@/components/Class/Room/TargetManage";
+import ScaleManage from "@/components/Class/Room/ScaleManage";
+import BookManage from "@/components/Class/Room/BookManage";
 export default {
   name: "ClassRoom",
-  components: { StudentManage },
+  components: {
+    StudentManage,
+    ChapterManage,
+    IntroductionManage,
+    OverviewManage,
+    TargetManage,
+    ScaleManage,
+    BookManage,
+  },
   computed: {
     title() {
       return this.tools[this.active].title;
