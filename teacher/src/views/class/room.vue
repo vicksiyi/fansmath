@@ -15,20 +15,7 @@
           </el-select>
         </div>
         <el-card>
-          <div class="tools">
-            <div
-              v-for="(item, index) in tools"
-              :key="item.id"
-              @click="activeChange(index)"
-              :class="`item ${index == active ? 'tools-selected' : ''}`"
-            >
-              <el-image
-                style="width: 40px; height: 40px; margin: auto"
-                :src="item.icon"
-              ></el-image>
-              <span>{{ item.title }}</span>
-            </div>
-          </div>
+          <Tools :tools="tools" :active="active" @activeChange="activeChange"></Tools>
         </el-card>
       </el-col>
       <el-col :span="16">
@@ -53,6 +40,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import { tools } from "@/data/room";
 import StudentManage from "@/components/Class/Room/StudentManage";
 import ChapterManage from "@/components/Class/Room/ChapterManage";
@@ -61,6 +49,7 @@ import OverviewManage from "@/components/Class/Room/OverviewManage";
 import TargetManage from "@/components/Class/Room/TargetManage";
 import ScaleManage from "@/components/Class/Room/ScaleManage";
 import BookManage from "@/components/Class/Room/BookManage";
+import Tools from "@/components/Common/Tools";
 export default {
   name: "ClassRoom",
   components: {
@@ -71,8 +60,12 @@ export default {
     TargetManage,
     ScaleManage,
     BookManage,
+    Tools,
   },
   computed: {
+    ...mapState({
+      active: (state) => state.chapterManage.active,
+    }),
     title() {
       return this.tools[this.active].title;
     },
@@ -80,7 +73,6 @@ export default {
   data() {
     return {
       tools: tools,
-      active: 0,
       options: [
         {
           value: "0",
@@ -96,7 +88,7 @@ export default {
   },
   methods: {
     activeChange(index) {
-      this.active = index;
+      this.$store.commit("activeChange", index);
     },
   },
 };
@@ -113,49 +105,5 @@ h1 {
 .select-course {
   /* margin-left: 20px; */
   margin-bottom: 20px;
-}
-.tools-selected {
-  background: #c0c4cc;
-}
-.tools-selected span {
-  color: #fff !important;
-}
-.tools {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-.tools .item img {
-  width: 40px;
-  height: 40px;
-  margin: auto;
-}
-.tools .item span {
-  font-size: 12px;
-  color: #495060;
-  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
-    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-}
-.tools .item {
-  width: 60px;
-  height: 60px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  padding: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
-  margin: 10px 15px;
-}
-.tools .item:hover {
-  -webkit-box-shadow: 0 0 0 2px #cff09e, 0 0 0 4px #ff0364;
-  box-shadow: 0 0 0 0.5px #5cadff, 0 0 0 0.5px #5cadff;
-  -webkit-transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
-  transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
-  -webkit-animation: gelatine 0.5s 1;
-  animation: gelatine 0.5s 1;
-  opacity: 0.6;
-  cursor: pointer;
 }
 </style>

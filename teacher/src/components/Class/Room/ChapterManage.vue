@@ -96,6 +96,14 @@
                     icon="el-icon-check"
                     circle
                   ></el-button>
+                  <!-- 管理按钮 -->
+                  <el-button
+                    type="primary"
+                    size="mini"
+                    @click="manage(firstIndex, secondIndex, thirdIndex)"
+                    icon="el-icon-setting"
+                    circle
+                  ></el-button>
                 </div>
               </div>
             </div>
@@ -136,14 +144,27 @@
         ></el-button>
       </div>
     </div>
+    <!-- 抽屉管理 -->
+    <el-drawer
+      title="1.1.1 平面图形面积-子子章节管理"
+      :visible.sync="drawer"
+      :direction="direction"
+      size="100%"
+    >
+      <Manage></Manage>
+    </el-drawer>
   </div>
 </template>
 
 <script>
+import Manage from "./Manage/Chapter";
 export default {
   name: "ChapterManage",
+  components: { Manage },
   data() {
     return {
+      drawer: false,
+      direction: "rtl",
       classArr: [
         {
           id: 0,
@@ -310,6 +331,10 @@ export default {
         this.$set(this.classArr[first], "isEdit", false);
       }
     },
+    // 子子章节管理
+    manage(first, second, third) {
+      this.drawer = true;
+    }
   },
 };
 </script>
