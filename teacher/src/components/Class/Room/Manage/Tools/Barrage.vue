@@ -1,10 +1,10 @@
 <template>
-  <div class="chat"><el-empty description="敬请期待"></el-empty></div>
+  <div class="barrage"><el-empty description="敬请期待"></el-empty></div>
 </template>
 
 <script>
 export default {
-  name: 'ClassChat'
+  name: 'Barrage'
 }
 </script>
 
